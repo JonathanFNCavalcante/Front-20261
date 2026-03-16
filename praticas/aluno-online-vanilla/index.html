@@ -5,8 +5,73 @@
     <link rel="icon" type="image/svg+xml" href="/javascript.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Aluno Online</title>
+    <link rel="stylesheet" href="/style.css" />
   </head>
   <body>
+    <aside class="sidebar">
+      <header class="brand">
+        <img src="/learn.svg" alt="Logotipo Aluno Online" />
+        <span class="brand-name">Aluno Online</span>
+      </header>
+      <nav class="main-menu">
+        <ul>
+          <li><a href="#" class="active">Dashboard</a></li>
+          <li><a href="#">Notas</a></li>
+          <li><a href="#">Faltas</a></li>
+          <li><a href="#">Boletos</a></li>
+          <li><a href="#">Requerimentos</a></li>
+          <li><a href="#">Sair</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <h1>Olá, Aluno!</h1>
+        <img src="/avatar.svg" alt="Avatar do perfil do aluno" class="avatar" />
+      </header>
+
+      <section class="welcome-section">
+        <h2>Bem-vindo ao portal do aluno</h2>
+      </section>
+
+      <section class="dashboard-grid">
+        <article class="card">
+          <header class="card-header">
+            <h3>Mural de Avisos</h3>
+          </header>
+          <section class="card-body">
+            <p>Inscrição para o projeto de extensão</p>
+            <p>Eleição para representante de turma</p>
+          </section>
+        </article>
+
+        <article class="card">
+          <header class="card-header">
+            <h3>Calendário Acadêmico</h3>
+          </header>
+          <section class="card-body">
+            <ul class="lista-calendario">
+              <li>23/02 - Início do período letivo 2026-1</li>
+              <li>25/04 - Prazo final para aplicação da P1</li>
+              <li>23/06 - Prazo final para aplicação da P2</li>
+              <li>04/07 - Fim do período letivo 2026-1</li>
+            </ul>
+          </section>
+        </article>
+
+        <article class="card">
+          <header class="card-header">
+            <h3>Minhas Disciplinas</h3>
+          </header>
+          <section class="card-body">
+            <p>BI e Data Warehousing</p>
+            <p>Construção de Frontend</p>
+          </section>
+        </article>
+      </section>
+    </main>
+
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
