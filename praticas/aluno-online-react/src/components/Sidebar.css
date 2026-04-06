@@ -1,0 +1,46 @@
+.sidebar {
+  width: 280px;
+  background-color: #e9ecef;
+  padding: 3rem 2.5rem;
+  min-height: 100vh;
+}
+
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 4rem;
+}
+
+.sidebar-header h2 {
+  font-size: 1.2rem;
+  color: #333333;
+}
+
+.logo-icon {
+  width: 40px;
+  height: 40px;
+}
+
+.sidebar ul {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+}
+
+.sidebar li {
+  margin-bottom: 2rem;
+  color: #333333;
+}
+
+.sidebar li a {
+  color: #333333;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    display: none;
+  }
+}

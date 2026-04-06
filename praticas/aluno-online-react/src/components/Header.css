@@ -1,0 +1,26 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.header h1 {
+  font-size: 2.5rem;
+  color: #333333;
+}
+
+.avatar-icon {
+  width: 60px;
+  height: 60px;
+}
+
+@media (max-width: 768px) {
+  .header h1 {
+    font-size: 2rem;
+  }
+  .avatar-icon {
+    width: 50px;
+    height: 50px;
+  }
+}
