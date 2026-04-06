@@ -11,6 +11,18 @@
   overflow: hidden;
 }
 
+.card-body ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.card-body li {
+  margin-bottom: 0.5rem;
+  color: #333333;
+  line-height: 1.6;
+}
+
 .card-header {
   background-color: #eaeaea; 
   padding: 0.8rem 1rem;

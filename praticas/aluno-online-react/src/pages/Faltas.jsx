@@ -8,7 +8,9 @@ function Faltas() {
       <article className="card">
         <header className="card-header">Listagem de Faltas</header>
         <section className="card-body">
-          <p>Nenhuma falta registrada até o momento.</p>
+        <ul>
+        <li>Nenhuma falta registrada até o momento.</li>
+        </ul>
         </section>
       </article>
     </section>
