@@ -8,7 +8,11 @@ function Notas() {
       <article className="card">
         <header className="card-header">Listagem de Notas</header>
         <section className="card-body">
-          <p>Nenhuma nota registrada no momento.</p>
+          <ul>
+            <li>Construção de Frontend: 10.0</li>
+            <li>Banco de Dados: 9.5</li>
+            <li>Arquitetura de Software: 8.0</li>
+          </ul>
         </section>
       </article>
     </section>

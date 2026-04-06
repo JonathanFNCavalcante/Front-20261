@@ -6,11 +6,13 @@ function Faltas() {
       <h2 className="subtitle">Faltas</h2>
 
       <article className="card">
-        <header className="card-header">Listagem de Faltas</header>
+        <header className="card-header">Faltas por Disciplina</header>
         <section className="card-body">
-        <ul>
-        <li>Nenhuma falta registrada até o momento.</li>
-        </ul>
+          <ul>
+            <li>Construção de Frontend: 2 faltas</li>
+            <li>Banco de Dados: 0 faltas</li>
+            <li>Arquitetura de Software: 4 faltas</li>
+          </ul>
         </section>
       </article>
     </section>
