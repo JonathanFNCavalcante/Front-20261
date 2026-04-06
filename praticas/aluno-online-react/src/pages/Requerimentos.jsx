@@ -3,18 +3,26 @@ import './Requerimentos.css';
 function Requerimentos() {
   return (
     <section className="requerimentos">
-      <h2 className="subtitle">Requerimentos</h2>
+      <h1 className="page-title">Meus Requerimentos</h1>
+      <h2 className="subtitle">Faça solicitações online para a secretaria</h2>
 
       <article className="card">
-        <header className="card-header">Histórico de Solicitações</header>
-        <section className="card-body">
-          <ul>
-            <li>Declaração de Matrícula - Concluído</li>
-            <li>Revisão de Prova (Frontend) - Em análise</li>
-            <li>Solicitação de Passe Escolar - Aberto</li>
-          </ul>
-          <button className="btn-novo">Novo Requerimento</button>
-        </section>
+        <table className="card-table">
+          <thead>
+            <tr>
+              <th>Tipo de Requerimento</th>
+              <th>Data de Solicitação</th>
+              <th>Situação</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Revisão de Menção</td><td>15/12/2025</td><td>Indeferido</td></tr>
+            <tr><td>Dispensa de Disciplina</td><td>12/06/2025</td><td>Indeferido</td></tr>
+            <tr><td>Trancamento de Matrícula</td><td>05/01/2024</td><td>Deferido</td></tr>
+            <tr><td>Mudança de Turno</td><td>10/10/2023</td><td>Deferido</td></tr>
+            <tr><td>Renovação de Matrícula</td><td>20/02/2023</td><td>Deferido</td></tr>
+          </tbody>
+        </table>
       </article>
     </section>
   );

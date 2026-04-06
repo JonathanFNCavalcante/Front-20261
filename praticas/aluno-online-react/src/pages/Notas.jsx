@@ -3,17 +3,74 @@ import './Notas.css';
 function Notas() {
   return (
     <section className="notas">
-      <h2 className="subtitle">Notas</h2>
+      <h1 className="page-title">Minhas Notas</h1>
+      <h2 className="subtitle">Histórico de Notas por Semestre</h2>
 
       <article className="card">
-        <header className="card-header">Listagem de Notas</header>
-        <section className="card-body">
-          <ul>
-            <li>Construção de Frontend: 10.0</li>
-            <li>Banco de Dados: 9.5</li>
-            <li>Arquitetura de Software: 8.0</li>
-          </ul>
-        </section>
+        <header className="card-header">2026.1</header>
+        <table className="card-table">
+          <thead>
+            <tr>
+              <th>Disciplina</th>
+              <th>A1</th>
+              <th>A2</th>
+              <th>A3</th>
+              <th>Menção</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>BI e Data Warehousing</td><td></td><td></td><td></td><td>SR</td>
+            </tr>
+            <tr>
+              <td>Construção de Frontend</td><td></td><td></td><td></td><td>SR</td>
+            </tr>
+            <tr>
+              <td>Manutenção de Software e Devops</td><td></td><td></td><td></td><td>SR</td>
+            </tr>
+          </tbody>
+        </table>
+      </article>
+
+      <article className="card">
+        <header className="card-header">2025.2</header>
+        <table className="card-table">
+          <thead>
+            <tr>
+              <th>Disciplina</th>
+              <th>A1</th>
+              <th>A2</th>
+              <th>A3</th>
+              <th>Menção</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Construção de Backend</td><td>5.4</td><td>6.2</td><td></td><td>MM</td>
+            </tr>
+            <tr>
+              <td>Estrutura de Dados</td><td>6.3</td><td>6.1</td><td></td><td>MM</td>
+            </tr>
+            <tr>
+              <td>Gerenciamento de Projetos</td><td>7.4</td><td>7.1</td><td></td><td>MS</td>
+            </tr>
+          </tbody>
+        </table>
+      </article>
+      
+      <article className="card">
+        <header className="card-header">2025.1</header>
+        <table className="card-table">
+          <thead>
+            <tr>
+              <th>Disciplina</th>
+              <th>A1</th>
+              <th>A2</th>
+              <th>A3</th>
+              <th>Menção</th>
+            </tr>
+          </thead>
+        </table>
       </article>
     </section>
   );

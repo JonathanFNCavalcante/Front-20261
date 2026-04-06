@@ -3,6 +3,7 @@ import './Dashboard.css';
 function Dashboard() {
   return (
     <section className="dashboard">
+      <h1 className="page-title">Olá, Aluno!</h1>
       <h2 className="subtitle">Bem-vindo ao portal do aluno</h2>
 
       <article className="card">
