@@ -1,23 +1,22 @@
-import './Dashboard.css';
+import './Dashboard.css'; 
+import PageTitle from '../components/PageTitle';
+import Card from '../components/Card';
 
 function Dashboard() {
   return (
     <section className="dashboard">
-      <h1 className="page-title">Olá, Aluno!</h1>
-      <h2 className="subtitle">Bem-vindo ao portal do aluno</h2>
+      <PageTitle title="Olá, Aluno!" subtitle="Bem-vindo ao portal do aluno" />
 
-      <article className="card">
-        <header className="card-header">Mural de Avisos</header>
+      <Card title="Mural de Avisos">
         <section className="card-body">
           <ul>
             <li>Inscrição para o projeto de extensão</li>
             <li>Eleição para representante de turma</li>
           </ul>
         </section>
-      </article>
+      </Card>
 
-      <article className="card">
-        <header className="card-header">Calendário Acadêmico</header>
+      <Card title="Calendário Acadêmico">
         <section className="card-body">
           <ul>
             <li>23/02 - Início do período letivo 2026-1</li>
@@ -26,17 +25,16 @@ function Dashboard() {
             <li>04/07 - Fim do período letivo 2026-1</li>
           </ul>
         </section>
-      </article>
+      </Card>
 
-      <article className="card">
-        <header className="card-header">Minhas Disciplinas</header>
+      <Card title="Minhas Disciplinas">
         <section className="card-body">
           <ul>
             <li>BI e Data Warehousing</li>
             <li>Construção de Frontend</li>
           </ul>
         </section>
-      </article>
+      </Card>
     </section>
   );
 }

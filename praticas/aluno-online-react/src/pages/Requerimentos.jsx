@@ -1,29 +1,28 @@
 import './Requerimentos.css';
+import PageTitle from '../components/PageTitle';
+import Card from '../components/Card';
+import Tabela from '../components/Tabela';
 
 function Requerimentos() {
+  const colunas = ['Tipo de Requerimento', 'Data de Solicitação', 'Situação'];
+  
+  const meusRequerimentos = [
+    ['Revisão de Menção', '15/12/2025', 'Indeferido'],
+    ['Dispensa de Disciplina', '12/06/2025', 'Indeferido'],
+    ['Trancamento de Matrícula', '05/01/2024', 'Deferido']
+  ];
+
   return (
     <section className="requerimentos">
-      <h1 className="page-title">Meus Requerimentos</h1>
-      <h2 className="subtitle">Faça solicitações online para a secretaria</h2>
+      <PageTitle title="Meus Requerimentos" subtitle="Faça solicitações online para a secretaria" />
 
-      <article className="card">
-        <table className="card-table">
-          <thead>
-            <tr>
-              <th>Tipo de Requerimento</th>
-              <th>Data de Solicitação</th>
-              <th>Situação</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><td>Revisão de Menção</td><td>15/12/2025</td><td>Indeferido</td></tr>
-            <tr><td>Dispensa de Disciplina</td><td>12/06/2025</td><td>Indeferido</td></tr>
-            <tr><td>Trancamento de Matrícula</td><td>05/01/2024</td><td>Deferido</td></tr>
-            <tr><td>Mudança de Turno</td><td>10/10/2023</td><td>Deferido</td></tr>
-            <tr><td>Renovação de Matrícula</td><td>20/02/2023</td><td>Deferido</td></tr>
-          </tbody>
-        </table>
-      </article>
+      <Card title="Situação dos Requerimentos">
+        <Tabela headers={colunas} data={meusRequerimentos} />
+        
+        <section className="card-body">
+          <button className="btn-novo">Novo Requerimento</button>
+        </section>
+      </Card>
     </section>
   );
 }
