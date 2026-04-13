@@ -1,12 +1,13 @@
-import './Requerimentos.css';
+import './Requerimentos.css'; // Esse terá CSS para o botão!
+import PageTitle from '../components/PageTitle';
+import Card from '../components/Card';
 
 function Requerimentos() {
   return (
     <section className="requerimentos">
-      <h1 className="page-title">Meus Requerimentos</h1>
-      <h2 className="subtitle">Faça solicitações online para a secretaria</h2>
+      <PageTitle title="Meus Requerimentos" subtitle="Faça solicitações online para a secretaria" />
 
-      <article className="card">
+      <Card title="Situação dos Requerimentos">
         <table className="card-table">
           <thead>
             <tr>
@@ -19,11 +20,14 @@ function Requerimentos() {
             <tr><td>Revisão de Menção</td><td>15/12/2025</td><td>Indeferido</td></tr>
             <tr><td>Dispensa de Disciplina</td><td>12/06/2025</td><td>Indeferido</td></tr>
             <tr><td>Trancamento de Matrícula</td><td>05/01/2024</td><td>Deferido</td></tr>
-            <tr><td>Mudança de Turno</td><td>10/10/2023</td><td>Deferido</td></tr>
-            <tr><td>Renovação de Matrícula</td><td>20/02/2023</td><td>Deferido</td></tr>
           </tbody>
         </table>
-      </article>
+        
+        {/* O botão fica dentro do Card, abaixo da tabela */}
+        <section className="card-body">
+          <button className="btn-novo">Novo Requerimento</button>
+        </section>
+      </Card>
     </section>
   );
 }
