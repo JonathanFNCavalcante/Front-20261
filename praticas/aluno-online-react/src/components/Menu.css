@@ -1,16 +1,25 @@
 .menu ul {
-    list-style-type: disc;
-    padding-left: 1.5rem;
-  }
-  
-  .menu li {
-    margin-bottom: 1.8rem;
-    color: #222222;
-  }
-  
-  .menu li a {
-    color: #222222;
-    text-decoration: none;
-    font-weight: 700;
-    font-size: 1rem;
-  }
+  list-style-type: none; 
+  padding: 0;
+}
+
+.menu li {
+  margin-bottom: 0.5rem;
+}
+
+.menu li a {
+  color: #222222;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1rem;
+  display: block; 
+  padding: 10px 15px; 
+  border-radius: 4px; 
+  transition: 0.3s;
+}
+
+.menu a.active {
+  background-color: #2c2d2e;
+  color: white;
+  font-weight: bold;
+}

@@ -1,27 +1,22 @@
-import './App.css';
-
-import Sidebar from './components/Sidebar';
-import Header from './components/Header';
-import Dashboard from './pages/Dashboard';
-import Faltas from './pages/Faltas';
-import Notas from './pages/Notas';
-import Boletos from './pages/Boletos';
-import Requerimentos from './pages/Requerimentos';
+import { Routes, Route } from "react-router-dom";
+import Layout from "./layouts/Layout";
+import Dashboard from "./pages/Dashboard";
+import Faltas from "./pages/Faltas";
+import Notas from "./pages/Notas";
+import Boletos from "./pages/Boletos";
+import Requerimentos from "./pages/Requerimentos";
 
 function App() {
   return (
-    <section className="app-layout">
-      {/* Sidebar na esquerda */}
-      <Sidebar />
-      
-      {/* Todo o resto fica do lado direito */}
-      <main className="main-content">
-        <Header />
-        
-        {/* Alterne aqui qual tela você quer renderizar */}
-        <Dashboard />
-      </main>
-    </section>
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route index element={<Dashboard />} />
+        <Route path="faltas" element={<Faltas />} />
+        <Route path="notas" element={<Notas />} />
+        <Route path="boletos" element={<Boletos />} />
+        <Route path="requerimentos" element={<Requerimentos />} />
+      </Route>
+    </Routes>
   );
 }
 
