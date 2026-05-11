@@ -1,15 +1,28 @@
+import { NavLink } from "react-router-dom"; 
 import './Menu.css';
 
 function Menu() {
   return (
     <nav className="menu">
       <ul>
-        <li><a href="#">Dashboard</a></li>
-        <li><a href="#">Notas</a></li>
-        <li><a href="#">Faltas</a></li>
-        <li><a href="#">Boletos</a></li>
-        <li><a href="#">Requerimentos</a></li>
-        <li><a href="#">Sair</a></li>
+        <li>
+          <NavLink to="/" end>Dashboard</NavLink>
+        </li>
+        <li>
+          <NavLink to="/notas">Notas</NavLink>
+        </li>
+        <li>
+          <NavLink to="/faltas">Faltas</NavLink>
+        </li>
+        <li>
+          <NavLink to="/boletos">Boletos</NavLink>
+        </li>
+        <li>
+          <NavLink to="/requerimentos">Requerimentos</NavLink>
+        </li>
+        <li>
+          <NavLink to="/sair">Sair</NavLink>
+        </li>
       </ul>
     </nav>
   );
