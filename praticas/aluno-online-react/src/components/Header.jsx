@@ -1,12 +1,16 @@
-import './Header.css';
-import avatarIcon from '../assets/avatar.svg';
+import { useAuth } from "../contexts/AuthContext";
 
-function Header() {
+const Topbar = () => {
+  const { usuario } = useAuth();
+
   return (
-    <header className="header">
-      <img src={avatarIcon} alt="Avatar do Aluno" className="avatar-icon" />
+    <header className="topbar">
+      <h1>Aluno Online</h1>
+      <div className="user-profile">
+        <span>Bem-vindo(a), {usuario?.nome}</span>
+      </div>
     </header>
   );
-}
+};
 
-export default Header;
+export default Topbar;
