@@ -1,7 +1,7 @@
-import { createContext, useState, useContext } from 'react';
+import { createContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const AuthContext = createContext();
+export const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
   const [autenticado, setAutenticado] = useState(false);
@@ -10,14 +10,14 @@ export const AuthProvider = ({ children }) => {
 
   const login = (dadosUsuario) => {
     setAutenticado(true);
-    setUsuario(dadosUsuario);
+    setUsuario({ nome: dadosUsuario.email.split('@')[0], email: dadosUsuario.email });
     navigate('/');
   };
 
   const logout = () => {
     setAutenticado(false);
     setUsuario(null);
-    navigate('/login'); 
+    navigate('/login');
   };
 
   return (
@@ -26,5 +26,3 @@ export const AuthProvider = ({ children }) => {
     </AuthContext.Provider>
   );
 };
-// eslint-disable-next-line react-refresh/only-export-components
-export const useAuth = () => useContext(AuthContext);
