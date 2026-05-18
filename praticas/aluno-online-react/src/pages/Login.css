@@ -1,0 +1,102 @@
+.login-wrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #fafafa;
+    font-family: Arial, sans-serif;
+  }
+  
+  .login-card {
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 8px;
+    border: 1px solid #eaeaea;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    width: 100%;
+    max-width: 480px;
+    box-sizing: border-box;
+  }
+  
+  .login-header {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .login-header .logo-icon {
+    width: 100px;
+    height: auto;
+    margin-bottom: 10px;
+  }
+  
+  .login-header h1 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #333;
+    margin: 0;
+  }
+  
+  .form-control {
+    margin-bottom: 20px;
+  }
+  
+  .form-control label {
+    display: block;
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 8px;
+    color: #333;
+  }
+  
+  .form-control input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #eaeaea;
+    border-radius: 4px;
+    font-size: 16px;
+    color: #333;
+    box-sizing: border-box;
+    background-color: #fafafa;
+  }
+  
+  .form-control input:focus {
+    outline: none;
+    border-color: #333;
+  }
+  
+  /* Estilos de erro vistos em image_8.png */
+  .form-control .input-error {
+    border-color: red;
+  }
+  
+  .error-text {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+    display: block;
+  }
+  
+  .login-card button {
+    width: 100%;
+    padding: 14px;
+    background-color: #eaeaea; /* Cor do botão neutro image_7.png */
+    color: #333;
+    border: none;
+    border-radius: 4px;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background 0.2s;
+  }
+  
+  .login-card button:hover {
+    background-color: #dadada;
+  }
+  
+  .login-footer {
+    margin-top: 40px;
+    color: #666;
+    font-size: 14px;
+  }
