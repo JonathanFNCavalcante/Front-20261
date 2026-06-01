@@ -1,11 +1,12 @@
 import { Routes, Route, Navigate } from "react-router-dom";
-import { useAuth } from "./hooks/useAuth";
+import { useAuth } from "./contexts/AuthContext";
 import Layout from "./layouts/Layout";
 import Dashboard from "./pages/Dashboard";
 import Faltas from "./pages/Faltas";
 import Notas from "./pages/Notas";
 import Boletos from "./pages/Boletos";
 import Requerimentos from "./pages/Requerimentos";
+import RequerimentoForm from './forms/RequerimentoForm';
 import Login from "./pages/Login";
 
 function App() {
@@ -19,7 +20,10 @@ function App() {
           <Route path="faltas" element={<Faltas />} />
           <Route path="notas" element={<Notas />} />
           <Route path="boletos" element={<Boletos />} />
-          <Route path="requerimentos" element={<Requerimentos />} />
+          <Route path="requerimentos">
+            <Route index element={<Requerimentos />} />
+            <Route path="novo" element={<RequerimentoForm />} />
+          </Route>
           <Route path="*" element={<Navigate to="/" />} />
         </Route>
       ) : (

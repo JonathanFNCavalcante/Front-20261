@@ -1,9 +1,11 @@
+import { useNavigate } from 'react-router-dom';
 import './Requerimentos.css';
 import PageTitle from '../components/PageTitle';
 import Card from '../components/Card';
 import Tabela from '../components/Tabela';
 
 function Requerimentos() {
+  const navigate = useNavigate();
   const colunas = ['Tipo de Requerimento', 'Data de Solicitação', 'Situação'];
   
   const meusRequerimentos = [
@@ -20,7 +22,9 @@ function Requerimentos() {
         <Tabela headers={colunas} data={meusRequerimentos} />
         
         <section className="card-body">
-          <button className="btn-novo">Novo Requerimento</button>
+          <button className="btn-novo" onClick={() => navigate('/requerimentos/novo')}>
+            ➕ Novo Requerimento
+          </button>
         </section>
       </Card>
     </section>
