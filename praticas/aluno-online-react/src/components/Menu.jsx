@@ -1,9 +1,9 @@
 import { NavLink } from "react-router-dom";
-import { useAuth } from "../hooks/useAuth";
+import { useAuth } from "../contexts/AuthContext";
 import "./Menu.css";
 
 function Menu() {
-  const { logout } = useAuth(); // Importa a função logout
+  const { logout } = useAuth();
 
   return (
     <nav className="menu">
