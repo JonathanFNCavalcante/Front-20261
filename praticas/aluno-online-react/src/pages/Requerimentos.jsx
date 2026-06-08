@@ -1,18 +1,29 @@
+import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Requerimentos.css';
 import PageTitle from '../components/PageTitle';
 import Card from '../components/Card';
 import Tabela from '../components/Tabela';
+import { listarRequerimentos } from '../services/requerimentoService';
 
-function Requerimentos() {
+export default function Requerimentos() {
   const navigate = useNavigate();
+  const [meusRequerimentos, setMeusRequerimentos] = useState([]);
   const colunas = ['Tipo de Requerimento', 'Data de Solicitação', 'Situação'];
-  
-  const meusRequerimentos = [
-    ['Revisão de Menção', '15/12/2025', 'Indeferido'],
-    ['Dispensa de Disciplina', '12/06/2025', 'Indeferido'],
-    ['Trancamento de Matrícula', '05/01/2024', 'Deferido']
-  ];
+
+  useEffect(() => {
+    const carregarDados = async () => {
+      try {
+        const dados = await listarRequerimentos();
+        const dadosFormatados = dados.map(req => [req.tipo, req.dataRequerimento, req.situacao]);
+        setMeusRequerimentos(dadosFormatados);
+      } catch (error) {
+        console.error("Erro ao carregar os dados:", error);
+      }
+    };
+    
+    carregarDados();
+  }, []);
 
   return (
     <section className="requerimentos">
@@ -30,5 +41,3 @@ function Requerimentos() {
     </section>
   );
 }
-
-export default Requerimentos;
