@@ -1,13 +1,19 @@
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
+import { cadastrarRequerimento } from '../services/requerimentoService';
 
 export default function RequerimentoForm() {
   const { register, handleSubmit, formState: { errors }, reset } = useForm();
   const navigate = useNavigate();
 
-  const onSubmit = (data) => {
-    console.log("Requerimento cadastrado:", data);
-    reset();
+  const onSubmit = async (data) => {
+    try {
+      await cadastrarRequerimento(data);
+      reset();
+      navigate('/requerimentos');
+    } catch (error) {
+      console.error("Erro ao cadastrar requerimento:", error);
+    }
   };
 
   const handleCancelar = () => {
@@ -25,9 +31,9 @@ export default function RequerimentoForm() {
             {...register("tipo", { required: "Tipo é obrigatório" })}
           >
             <option value="">Selecione um tipo...</option>
-            <option value="matricula">Ajuste de Matrícula</option>
-            <option value="historico">Histórico Escolar</option>
-            <option value="diploma">Solicitação de Diploma</option>
+            <option value="Ajuste de Matrícula">Ajuste de Matrícula</option>
+            <option value="Histórico Escolar">Histórico Escolar</option>
+            <option value="Solicitação de Diploma">Solicitação de Diploma</option>
           </select>
           {errors.tipo && <span style={{ color: 'red' }}>{errors.tipo.message}</span>}
         </fieldset>
