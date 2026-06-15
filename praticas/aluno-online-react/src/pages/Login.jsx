@@ -9,7 +9,7 @@ function Login() {
   const [senha, setSenha] = useState('');
   const [erros, setErros] = useState({});
 
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
     let novosErros = {};
 
@@ -22,11 +22,15 @@ function Login() {
     }
 
     setErros({}); 
-    login({ email, senha });
+    try {
+      await login(email, senha);
+    } catch (error) {
+      setErros({ form: "E-mail ou senha inválidos. Tente novamente." });
+    }
   };
 
   return (
-    <div className="login-wrapper">
+    <main className="login-wrapper">
       <section className="login-card">
         <header className="login-header">
           <img src={learnIcon} alt="Logo Aluno Online" className="logo-icon" />
@@ -34,7 +38,9 @@ function Login() {
         </header>
 
         <form onSubmit={handleLogin}>
-          <div className="form-control">
+          {erros.form && <span className="error-text" style={{ display: 'block', marginBottom: '10px' }}>{erros.form}</span>}
+
+          <section className="form-control">
             <label htmlFor="email">E-mail</label>
             <input 
               type="email" 
@@ -44,9 +50,9 @@ function Login() {
               className={erros.email ? 'input-error' : ''}
             />
             {erros.email && <span className="error-text">{erros.email}</span>}
-          </div>
+          </section>
 
-          <div className="form-control">
+          <section className="form-control">
             <label htmlFor="senha">Senha</label>
             <input 
               type="password" 
@@ -56,7 +62,7 @@ function Login() {
               className={erros.senha ? 'input-error' : ''}
             />
             {erros.senha && <span className="error-text">{erros.senha}</span>}
-          </div>
+          </section>
 
           <button type="submit">Entrar</button>
         </form>
@@ -65,7 +71,7 @@ function Login() {
       <footer className="login-footer">
         © 2026. Todos os direitos reservados.
       </footer>
-    </div>
+    </main>
   );
 }
 

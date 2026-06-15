@@ -1,16 +1,18 @@
 import { useAuth } from "../contexts/AuthContext";
 
-const Topbar = () => {
-  const { usuario } = useAuth();
+const Header = () => {
+  const { usuario, logout } = useAuth();
 
   return (
     <header className="topbar">
       <h1>Aluno Online</h1>
-      <div className="user-profile">
-        <span>Bem-vindo(a), {usuario?.nome}</span>
-      </div>
+
+      <section className="user-profile">
+        <span>Bem-vindo(a), {usuario?.email}</span>
+        <button onClick={logout} className="btn-sair">Sair</button>
+      </section>
     </header>
   );
 };
 
-export default Topbar;
+export default Header;
