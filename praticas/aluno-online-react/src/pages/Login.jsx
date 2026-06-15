@@ -24,7 +24,7 @@ function Login() {
     setErros({}); 
     try {
       await login(email, senha);
-    } catch (error) {
+    } catch {
       setErros({ form: "E-mail ou senha inválidos. Tente novamente." });
     }
   };
